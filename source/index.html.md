@@ -124,3 +124,37 @@ alert_list | The alert ID
 alert_content | The content you send
 
 
+# Webhooks
+## Send data to Widget webhook
+
+
+```shell
+curl "https://app.streamtools.com/webhook/timer/OT1i2934500/" \
+  -X POST \
+  -H "X-API-KEY: apikey" \
+  -d action="start" \
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "id": "OT1i2934500",
+    "widgetURL": "https://app.streamtools.com/widget/timer/OT1i2934500",
+    "object": "timer",
+    "action": "start",
+    "status": "OK"
+}
+```
+
+This endpoint send data to a specific widget.
+
+### HTTP Request
+
+`POST https://app.streamtools.com/webhook/<WIDGET>/<ID>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+action | Action data: at the moment only accepts "start"
