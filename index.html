@@ -330,11 +330,22 @@
               </ul>
           </li>
           <li>
+            <a href="#webhooks" class="toc-h1 toc-link" data-title="Webhooks">Webhooks</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#send-data-to-widget-webhook" class="toc-h2 toc-link" data-title="Send data to Widget webhook">Send data to Widget webhook</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
           <li>
             <a href="#changelog" class="toc-h1 toc-link" data-title="Changelog">Changelog</a>
               <ul class="toc-list-h2">
+                  <li>
+                    <a href="#20201216" class="toc-h2 toc-link" data-title="20201216">20201216</a>
+                  </li>
                   <li>
                     <a href="#20201127" class="toc-h2 toc-link" data-title="20201127">20201127</a>
                   </li>
@@ -440,6 +451,37 @@ You must replace <code>apikey</code> with your personal API key.
 <td>The content you send</td>
 </tr>
 </tbody></table>
+<h1 id='webhooks'>Webhooks</h1><h2 id='send-data-to-widget-webhook'>Send data to Widget webhook</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://app.streamtools.com/webhook/timer/OT1i2934500/"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"X-API-KEY: apikey"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="nv">action</span><span class="o">=</span><span class="s2">"start"</span> <span class="se">\</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OT1i2934500"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"widgetURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://app.streamtools.com/widget/timer/OT1i2934500"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"object"</span><span class="p">:</span><span class="w"> </span><span class="s2">"timer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"start"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint send data to a specific widget.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST https://app.streamtools.com/webhook/&lt;WIDGET&gt;/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>action</td>
+<td>Action data: at the moment only accepts &quot;start&quot;</td>
+</tr>
+</tbody></table>
 <h1 id='errors'>Errors</h1>
 <aside class="notice">
 This is the list of error response codes that can return API requests.
@@ -500,6 +542,10 @@ This is the list of error response codes that can return API requests.
 </tbody></table>
 <h1 id='changelog'>Changelog</h1>
 <p>History of API changes:</p>
+<h3 id='20201216'>20201216</h3>
+<ul>
+<li>Added webhook documentation</li>
+</ul>
 <h3 id='20201127'>20201127</h3>
 <ul>
 <li>First version of Streamtools API Docs with API v1 to use the service with Zapier</li>
