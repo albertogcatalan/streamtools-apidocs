@@ -158,3 +158,7 @@ This endpoint send data to a specific widget.
 Parameter | Description
 --------- | -----------
 action | Action data: at the moment only accepts "start"
+
+<aside class="notice">
+Widgets supported: "studyroom", "timer", "flipcoin", "diceroller", "randomnamepicker"
+</aside>
