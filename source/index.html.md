@@ -125,6 +125,63 @@ alert_content | The content you send
 
 
 # Webhooks
+## Get list data from Widget webhook
+
+
+```shell
+curl "https://app.streamtools.com/webhook/timer/" \ 
+  -H "X-API-KEY: apikey"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+        "id": "OT_15",
+        "user": 1,
+        "title": "Hola",
+        "type": "timer",
+        "slug": "OT1i6710483",
+        "status": "active",
+        "content": "",
+        "custom_css": "@import url('https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,500,700,900&display=swap');\r\n\r\nbody {\r\n  text-align: center;\r\n  vertical-align: middle;\r\n  font-family: monospace;\r\n  font-size: 40px;\r\n  font-family: 'Open Sans';\r\n  color: white;\r\n}\r\n\r\n#timer {\r\n  display: inline;\r\n}",
+        "metadata": {
+            "playButton": true,
+            "requestStatus": false
+        },
+        "created": 1608287968,
+        "updated": 1608292230
+    },
+    {
+        "id": "OT_16",
+        "user": 1,
+        "title": "Hello again",
+        "type": "timer",
+        "slug": "OT1i6710486",
+        "status": "active",
+        "content": "",
+        "custom_css": "@import url('https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,500,700,900&display=swap');\r\n\r\nbody {\r\n  text-align: center;\r\n  vertical-align: middle;\r\n  font-family: monospace;\r\n  font-size: 40px;\r\n  font-family: 'Open Sans';\r\n  color: white;\r\n}\r\n\r\n#timer {\r\n  display: inline;\r\n}",
+        "metadata": {
+            "playButton": true,
+            "requestStatus": false
+        },
+        "created": 1608287968,
+        "updated": 1608292230
+    }
+]
+```
+
+This endpoint get list data from a specific widget.
+
+### HTTP Request
+
+`GET https://app.streamtools.com/webhook/<WIDGET>/`
+
+<aside class="notice">
+Widgets supported: "studyroom", "timer", "flipcoin", "diceroller", "randomnamepicker"
+</aside>
+
 ## Send data to Widget webhook
 
 

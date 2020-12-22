@@ -2,6 +2,9 @@
 
 History of API changes:
 
+### 20201222
+ - Webhook updated
+
 ### 20201216
  - Added webhook documentation
  
