@@ -57,7 +57,7 @@ You must replace <code>apikey</code> with your personal API key.
 ## Get All Alerts
 
 ```shell
-curl "https://app.streamtools.com/api/v1/getList/" \
+curl "https://app.streamtools.com/api/v1/zapier/" \
   -H "X-API-KEY: apikey"
 ```
 
@@ -82,7 +82,7 @@ This endpoint retrieves all alerts.
 
 ### HTTP Request
 
-`GET https://app.streamtools.com/api/v1/getList/`
+`GET https://app.streamtools.com/api/v1/zapier/`
 
 ## Send content to Alert
 
